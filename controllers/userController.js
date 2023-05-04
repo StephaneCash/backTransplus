@@ -142,17 +142,14 @@ const loginUser = (req, res) => {
 }
 
 const getOneUser = async (req, res) => {
-    try {
-        let id = req.params.id;
-        let user = await db.users.findOne({ where: { id: id }, attributes: ['pseudo', 'email', 'role', 'createdAt', 'updatedAt', "id", "isActive"] });
-
-        if (user === null) {
-            return res.status(404).json({ message: 'Aucun utilisateur n\'a été trouvé' });
-        }
-        res.status(200).json({ message: 'L\'utilisateur ' + id + ' a été trouvé avec succès', data: user });
-    } catch (error) {
-        return res.status(500).json({ error });
-    }
+    let id = req.params.id
+    db.users.findByPk(id, {attributes: ['pseudo', 'email', 'role', 'createdAt', 'updatedAt', "id", 'isActive']})
+        .then(resp => {
+            res.status(200).json(resp);
+        })
+        .catch(err => {
+            return res.status(500).json('Erreurs: ' + err);
+        });
 };
 
 const updateUser = (req, res) => {

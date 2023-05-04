@@ -1,15 +1,22 @@
 {
-  "name": "backinfluence",
+  "name": "backtransplus",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "jest --watchAll",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js"
   },
-  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StephaneCash/backTransplus.git"
+  },
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/StephaneCash/backTransplus/issues"
+  },
+  "homepage": "https://github.com/StephaneCash/backTransplus#readme",
   "dependencies": {
     "bcrypt": "^5.1.0",
     "body-parser": "^1.20.2",
@@ -18,16 +25,10 @@
     "express": "^4.18.2",
     "jsonwebtoken": "^9.0.0",
     "multer": "^1.4.5-lts.1",
-    "mysql2": "^3.2.0",
-    "sequelize": "^6.29.3",
-    "validator": "^13.9.0"
+    "mysql2": "^3.2.3",
+    "sequelize": "^6.31.0"
   },
   "devDependencies": {
-    "@types/jest": "^29.5.0",
-    "@types/supertest": "^2.0.12",
-    "jest": "^29.5.0",
-    "nodemon": "^2.0.21",
-    "supertest": "^6.3.3",
-    "ts-jest": "^29.0.5"
+    "nodemon": "^2.0.22"
   }
 }
